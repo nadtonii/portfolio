@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toni Nađ - Product Designer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">Toni</div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#work" class="work-link">Work</a></li>
+                    <li><a href="#about" class="about-link">About</a></li>
+                    <li><a href="#contact" class="contact-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Hi, I'm Toni.</h1>
+                <p class="hero-subtitle">A young passionate Product Designer driven by the power of simplicity and functionality.  Currently working at OptimoRoute.</p>
+                <div class="cta-buttons">
+                    <a href="#work" class="button primary">View Projects</a>
+                    <a href="#contact" class="button secondary">Let's Talk</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="container">
+                <h2>Selected work</h2>
+                <div class="work-grid">
+                    <div class="work-card">
+                        <div class="work-image">
+                            <img 
+                                src="stack-mockup.png" 
+                                alt="Stack Project Preview"
+                                loading="eager"
+                                decoding="async"
+                                width="800"
+                                height="600"
+                            >
+                        </div>
+                        <div class="work-content">
+                            <h3>Stack</h3>
+                            <p>The best possible way to manage your tasks.</p>
+                            <a href="case-studies/stack.html" class="case-study-link">View Case Study <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <div class="work-image">
+                            <img 
+                                src="healthcare-mockup.png" 
+                                alt="Healthcare Croatia Preview"
+                                loading="eager"
+                                decoding="async"
+                                width="800"
+                                height="600"
+                            >
+                        </div>
+                        <div class="work-content">
+                            <h3>Healthcare Croatia</h3>
+                            <p>All your medical needs in one place, when you need it.</p>
+                            <a href="case-studies/healthcare.html" class="case-study-link">View Case Study <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <div class="work-image">
+                            <img 
+                                src="touch-mockup.png" 
+                                alt="Project Three Preview"
+                                loading="eager"
+                                decoding="async"
+                                width="800"
+                                height="600"
+                            >
+                        </div>
+                        <div class="work-content">
+                            <h3>Your idea?</h3>
+                            <p>I'm always open to new ideas and collaborations.</p>
+                            <a href="#contact" class="case-study-link">Get in touch <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2>About me</h2>
+                        <p> I am 23 years old and I live in Zagreb, Croatia. I am a product designer with a passion for creating intuitive and user-friendly experiences. I'm currently working at OptimoRoute, where I'm responsible for the company's flagship product.</p>
+                        <p>I went to Technical and Natural Sciences High School Ruđer Bošković Osijek, where I studied Graphic Design and Multimedia. After that, I soon realized that I'm more interested in the user experience and the interaction between the user and the product, than designing pretty logos and creating websites.</p>
+                    </div>
+                    <div class="skills-content">
+                        <div class="skill-category">
+                            <h3>Design</h3>
+                            <ul class="skill-list">
+                                <li>UI/UX Design</li>
+                                <li>UX Research</li>
+                                <li>Design Systems</li>
+                                <li>Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <ul class="skill-list">
+                                <li>Figma</li>
+                                <li>Notion</li>
+                                <li>Xcode</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Technologies</h3>
+                            <ul class="skill-list">
+                                <li>HTML/CSS</li>
+                                <li>Swift</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Let's work together</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p>Ready to start a project? Send me a message and let's create something amazing together. I'm always excited to hear about new opportunities and collaborations.</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell me about your project" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Toni Nađ</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://www.linkedin.com/in/tnad/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
