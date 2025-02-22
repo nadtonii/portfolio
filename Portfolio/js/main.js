@@ -1,24 +1,10 @@
-// Smooth scrolling with enhanced animations
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
-        // Get the target section
-        const target = document.querySelector(this.getAttribute('href'));
-        const offset = 100; // Offset for fixed header
-        
-        // Add animation class to target section
-        target.classList.add('section-entering');
-        
-        window.scrollTo({
-            top: target.offsetTop - offset,
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-        
-        // Remove animation class after transition
-        setTimeout(() => {
-            target.classList.remove('section-entering');
-        }, 1000);
     });
 });
 
@@ -46,81 +32,114 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     }, 1500);
 });
 
-// Reveal animations on scroll
-const revealElements = document.querySelectorAll('.work-card, .about-content, .contact-form');
-
-const reveal = () => {
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('revealed');
-        }
-    });
+// Intersection Observer for fade in animations
+const observerOptions = {
+    root: null,
+    rootMargin: '-50px',  // Only trigger when element is 50px in view
+    threshold: 0.15
 };
 
-window.addEventListener('scroll', reveal);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
-// Hamburger Menu with improved functionality
+// Initialize animations
+function initAnimations() {
+    // Work section (homepage)
+    document.querySelectorAll('.work-card').forEach((card, index) => {
+        card.classList.add('fade-in');
+        card.classList.add(`fade-in-delay-${index}`);
+        observer.observe(card);
+    });
+
+    // About section (homepage)
+    const aboutContent = document.querySelector('.about-content');
+    if (aboutContent) {
+        aboutContent.classList.add('fade-in');
+        observer.observe(aboutContent);
+    }
+
+    // Skills (homepage)
+    document.querySelectorAll('.skill-category').forEach((category, index) => {
+        category.classList.add('fade-in');
+        category.classList.add(`fade-in-delay-${index}`);
+        observer.observe(category);
+    });
+
+    // Contact section (homepage)
+    const contactElements = document.querySelectorAll('.contact-form, .contact-info');
+    contactElements.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+    });
+
+    // Case study content blocks
+    document.querySelectorAll('.case-study-content .content-block').forEach((block, index) => {
+        block.classList.add('fade-in');
+        if (index > 0) {
+            block.classList.add(`fade-in-delay-${index % 3}`);
+        }
+        observer.observe(block);
+    });
+
+    // Case study process steps
+    document.querySelectorAll('.process-steps .step').forEach((step, index) => {
+        step.classList.add('fade-in');
+        step.classList.add(`fade-in-delay-${index}`);
+        observer.observe(step);
+    });
+
+    // Case study gallery
+    const gallerySection = document.querySelector('.gallery-section');
+    if (gallerySection) {
+        gallerySection.classList.add('fade-in');
+        observer.observe(gallerySection);
+    }
+}
+
+// Run after DOM is loaded
+document.addEventListener('DOMContentLoaded', initAnimations);
+
+// Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const body = document.body;
 
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
     body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-});
+}
+
+hamburger.addEventListener('click', toggleMenu);
 
 // Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach((link, index) => {
-    link.parentElement.style.setProperty('--i', index);
+document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        body.style.overflow = '';
+        if (navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        body.style.overflow = '';
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        toggleMenu();
     }
 });
 
-// Add scroll-based animations
-const sections = document.querySelectorAll('section');
-const observerOptions = {
-    root: null,
-    threshold: 0.1,
-    rootMargin: '-50px'
-};
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        toggleMenu();
+    }
+});
 
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('section-visible');
-            // Animate children elements
-            entry.target.querySelectorAll('.animate-on-scroll').forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('element-visible');
-                }, index * 100);
-            });
-        }
-    });
-}, observerOptions);
-
-sections.forEach(section => {
-    section.classList.add('section-hidden');
-    sectionObserver.observe(section);
-    
-    // Add animation class to key elements
-    const animateElements = section.querySelectorAll('h1, h2, p, .work-card, .skill-category, .form-group');
-    animateElements.forEach(el => {
-        el.classList.add('animate-on-scroll');
-    });
-}); 

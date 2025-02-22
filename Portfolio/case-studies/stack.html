@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/case-study.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.jpeg">
+    <link rel="manifest" href="favicon.jpeg">
 </head>
-<body class="case-study-page">
+<body class="case-study-page" data-project="stack">
     <header>
         <nav>
             <div class="container">
-                <div class="logo">Toni</div>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Back to Home</a></li>
+                    <li><a href="../index.html">← Back home</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,7 +55,7 @@
 
                 <div class="content-block">
                     <h2>The challenge</h2>
-                    <p>The main challenge was to create a task management app that is easy to use and navigate. The app also needed to be able to handle a large number of tasks and reminders. Personal challenge was to learn Swift and Xcode and transfer the design from Figma to Swift.</p>
+                    <p>The main challenge was to create a task management app that is easy to use and navigate. The app also needed to be able to handle a large number of tasks and reminders.</p>
                     <p> Personal challenge was to learn Swift and Xcode and transfer the design from Figma to Swift.</p>
                 </div>
 
@@ -61,15 +64,34 @@
                     <div class="process-steps">
                         <div class="step">
                             <h3>Research</h3>
-                            <p>Conducted user research through surveys and competitor analysis. Studied popular task management apps like Todoist, Things, and TickTick to identify key features and opportunities for improvement.</p>
+                            <p>Through user research, I identified three main problems with existing task management apps:</p>
+                            <ul class="research-list">
+                                <li>Users found it frustrating to input tasks with multiple steps and details</li>
+                                <li>Most apps required too many clicks to create a simple task</li>
+                                <li>Important tasks often got lost in long lists</li>
+                            </ul>
+                            <p>I solved these by implementing natural language processing for quick task creation, smart categorization, and an intuitive priority system.</p>
                         </div>
                         <div class="step">
                             <h3>Design</h3>
-                            <p>Created high-fidelity prototypes in Figma, focusing on intuitive task creation and management. Conducted multiple rounds of usability testing to refine the interface and user flows.</p>
+                            <p>The design process focused on solving key user pain points:</p>
+                            <ul class="research-list">
+                                <li>Created a natural language input that understands dates, priorities, and categories</li>
+                                <li>Designed smart lists that automatically organize tasks based on context</li>
+                                <li>Developed a minimal interface that keeps the focus on task management</li>
+                            </ul>
+                            <p>Multiple rounds of user testing helped refine these features until users could create and manage tasks with minimal friction.</p>
                         </div>
                         <div class="step">
                             <h3>Development</h3>
-                            <p>Built the app using Swift and Xcode, implementing core features like natural language processing and reminders. Refined the UI components to match the Figma designs perfectly.</p>
+                            <p>Development presented several technical challenges:</p>
+                            <ul class="research-list">
+                                <li>Built a custom natural language parser for task creation</li>
+                                <li>Implemented local data storage for offline functionality</li>
+                                <li>Created a notification system for reminders and deadlines</li>
+                                <li>Optimized performance for smooth task management experience</li>
+                            </ul>
+                            <p>The app was built using Swift and SwiftUI, ensuring native performance and iOS design guidelines compliance.</p>
                         </div>
                     </div>
                 </div>
@@ -84,13 +106,13 @@
                                 <img 
                                     src="../images/stack-gallery.png" 
                                     alt="Stack Home Screen"
-                                    loading="lazy"
-                                    decoding="async"
+                                    fetchpriority="high"
+                                    decoding="sync"
                                     width="3006"
                                     height="1521"
                                 >
                                 <div class="image-caption">
-                                    <h4>Stack Overview</h4>
+                                    <h4>Stack</h4>
                                     <p>A beautiful and intuitive task management experience</p>
                                 </div>
                             </div>
@@ -103,11 +125,13 @@
         <section class="next-project">
             <div class="container">
                 <a href="healthcare.html" class="next-project-link">
-                    <span>Next Project</span>
+                    <span>Next project</span>
                     <h3>Healthcare Croatia →</h3>
                 </a>
             </div>
         </section>
     </main>
+
+    <script src="../js/main.js"></script>
 </body>
 </html> 

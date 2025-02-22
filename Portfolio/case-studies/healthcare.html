@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/case-study.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.jpeg">
+    <link rel="manifest" href="favicon.jpeg">
 </head>
-<body class="case-study-page">
+<body class="case-study-page" data-project="healthcare">
     <header>
         <nav>
             <div class="container">
-                <div class="logo">Toni</div>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Back to home</a></li>
+                    <li><a href="../index.html">← Back home</a></li>
                 </ul>
             </div>
         </nav>
@@ -61,15 +64,34 @@
                     <div class="process-steps">
                         <div class="step">
                             <h3>Research</h3>
-                            <p>Conducted qualitative and quantitative research with patients and clinics through interviews and surveys. Analyzed existing healthcare platforms to identify pain points and opportunities for improvement.</p>
+                            <p>Research revealed several critical issues in the Croatian healthcare system:</p>
+                            <ul class="research-list">
+                                <li>Long waiting times for appointments (3-6 months on average)</li>
+                                <li>Difficulty finding available specialists in the area</li>
+                                <li>No way to compare doctors based on patient experiences</li>
+                            </ul>
+                            <p>I addressed these by creating a real-time availability system, location-based doctor search, and a verified review system to help patients make informed decisions.</p>
                         </div>
                         <div class="step">
                             <h3>Design</h3>
-                            <p>Created a clean, accessible interface in Figma with intuitive user flows. Used Miro for user flow mapping and Notion for documentation. Tested multiple iterations with diverse user groups.</p>
+                            <p>The design approach focused on accessibility and clarity:</p>
+                            <ul class="research-list">
+                                <li>Created an appointment booking flow that takes less than 30 seconds</li>
+                                <li>Designed an intuitive doctor search with filters for specialty and location</li>
+                                <li>Developed a clear system for displaying doctor availability and reviews</li>
+                            </ul>
+                            <p>Each feature was tested with both elderly patients and healthcare providers to ensure universal usability.</p>
                         </div>
                         <div class="step">
                             <h3>Implementation</h3>
-                            <p>Developed a secure platform for handling medical data and appointments. Working closely with clinics to ensure the system meets both patient and healthcare provider needs.</p>
+                            <p>Implementation required solving complex technical challenges:</p>
+                            <ul class="research-list">
+                                <li>Built a secure system for handling sensitive medical data</li>
+                                <li>Created a real-time appointment scheduling system</li>
+                                <li>Developed an automated notification system for appointments</li>
+                                <li>Implemented GDPR-compliant data protection measures</li>
+                            </ul>
+                            <p>The platform was built with scalability in mind, allowing for future expansion across Croatia.</p>
                         </div>
                     </div>
                 </div>
@@ -84,14 +106,14 @@
                                 <img 
                                     src="../images/health-gallery.png" 
                                     alt="Healthcare Croatia Platform Overview"
-                                    loading="lazy"
-                                    decoding="async"
+                                    fetchpriority="high"
+                                    decoding="sync"
                                     width="3006"
                                     height="1521"
                                 >
                                 <div class="image-caption">
-                                    <h4>Healthcare Croatia Overview</h4>
-                                    <p>A modern platform connecting patients with healthcare providers</p>
+                                    <h4>Healthcare Croatia</h4>
+                                    <p>A modern platform connecting patients with doctors and clinics</p>
                                 </div>
                             </div>
                         </div>
@@ -109,5 +131,7 @@
             </div>
         </section>
     </main>
+
+    <script src="../js/main.js"></script>
 </body>
 </html> 

@@ -35,10 +35,10 @@ body {
 /* Typography */
 h1 {
     font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1;
     margin-bottom: 2rem;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
 }
 
 h2 {
@@ -62,6 +62,7 @@ h3 {
     max-width: 800px;
     margin-bottom: 3.5rem;
     font-weight: 400;
+    text-align: left;
 }
 
 /* Navigation */
@@ -93,7 +94,6 @@ nav .container {
     display: flex;
     gap: 2rem;
     list-style: none;
-    z-index: 1000;
 }
 
 .nav-links a {
@@ -141,7 +141,7 @@ nav .container {
 
 .button.primary {
     background-color: var(--color-cream);
-    color: var(--color-lime);
+    color: #E6007F;
 }
 
 .button.secondary {
@@ -164,6 +164,7 @@ nav .container {
 .cta-buttons {
     display: flex;
     gap: 1rem;
+    width: 100%;
 }
 
 /* Sections */
@@ -176,8 +177,20 @@ section {
 #hero {
     background-color: var(--color-lime);
     color: var(--color-cream);
-    min-height: 100vh;
-    padding-top: 140px;
+    min-height: 70vh;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: flex-start;
+}
+
+#hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 60px;
 }
 
 #work {
@@ -202,13 +215,13 @@ section {
 }
 
 #contact {
-    background-color: var(--color-orange);
-    color: var(--color-white);
+    background-color: #FFE600;
+    color: var(--color-dark);
     padding: 10rem 0;
 }
 
 #contact h2 {
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: 4rem;
     margin-bottom: 4rem;
     text-align: center;
@@ -224,10 +237,10 @@ section {
 
 .work-card {
     background: rgba(73, 77, 0, 0.05);
+    backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform, box-shadow;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .work-image {
@@ -235,23 +248,23 @@ section {
     height: 400px;
     overflow: hidden;
     position: relative;
-    background-color: var(--color-cream);
-    will-change: transform;
+    display: flex;
+    align-items: center;
 }
 
 .work-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translateZ(0);
+    object-position: center top;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transition: transform 0.3s ease;
-    will-change: transform;
 }
 
 .work-content {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 2rem;
 }
 
 .work-card:hover {
@@ -265,14 +278,15 @@ section {
 
 .work-card h3 {
     color: var(--color-olive);
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
+    white-space: nowrap;
 }
 
 .work-card p {
     font-size: 1.5rem;
     line-height: 1.6;
     color: rgba(73, 77, 0, 0.8);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Case Study Link */
@@ -327,7 +341,7 @@ section {
 .contact-info p {
     font-size: 1.75rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-dark);
     margin-bottom: 2rem;
 }
 
@@ -345,15 +359,15 @@ section {
 
 .form-group label {
     font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-dark);
 }
 
 .contact-form input,
 .contact-form textarea {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--border-radius);
-    color: var(--color-white);
+    color: var(--color-dark);
     padding: 1.25rem;
     font-size: 1.25rem;
     transition: all 0.3s ease;
@@ -367,19 +381,19 @@ section {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 1.25rem;
 }
 
 .contact-form button {
-    background: var(--color-white);
-    color: var(--color-orange);
+    background: var(--color-dark);
+    color: #FFE600;
     border: none;
     padding: 1.25rem 2.5rem;
     border-radius: var(--border-radius);
@@ -391,7 +405,6 @@ section {
 }
 
 .contact-form button:hover {
-    transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -425,7 +438,7 @@ footer {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -434,20 +447,63 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    h1 {
-        font-size: 6rem;
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .work-grid {
+        gap: 2rem;
     }
-    
+
+    .work-image {
+        height: 340px;
+    }
+
+    .work-image img {
+        width: 95%;
+        margin: 0 auto;
+        object-fit: contain;
+        max-height: 95%;
+    }
+
+    .work-content {
+        padding: 1.25rem 1.75rem;
+    }
+
+    .work-card h3 {
+        margin-top: 0.5rem;
+    }
+
+    .work-card p {
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    .work-card h3 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 1200px) {
     .work-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
+    }
+
+    .work-image {
+        height: 350px;
+    }
+
+    .work-image img {
+        width: 100%;
+        object-fit: cover;
     }
 }
 
 @media (max-width: 768px) {
     h1 {
         font-size: 3rem;
+        white-space: nowrap;
+        margin-bottom: 1.5rem;
     }
     
     h2 {
@@ -455,7 +511,7 @@ footer {
     }
     
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
     .work-grid {
@@ -464,11 +520,77 @@ footer {
     }
     
     .work-image {
-        height: 350px;
+        height: 300px;
     }
     
+    nav .container {
+        padding: 1rem 2rem;
+    }
+
     .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-cream);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
         display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Special handling for case study pages */
+    .case-study-page .nav-links {
+        position: static;
+        display: flex;
+        height: auto;
+        width: auto;
+        background: none;
+        opacity: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        pointer-events: auto;
+    }
+
+    .case-study-page .nav-links li {
+        margin: 0;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .case-study-page .hamburger {
+        display: none; /* Hide hamburger on case study pages */
+    }
+
+    .case-study-page nav .container {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
     }
     
     section {
@@ -487,6 +609,30 @@ footer {
     
     #contact h2 {
         font-size: 3rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .cta-buttons .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .work-card {
+        max-width: 100%;
+    }
+
+    .work-content {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .work-card p {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -586,7 +732,6 @@ footer {
     border: none;
     background: none;
     padding: 0.5rem;
-    z-index: 1001;
 }
 
 .hamburger span {
@@ -604,22 +749,24 @@ footer {
     }
 
     .nav-links {
-        display: flex;
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
         width: 100%;
         height: 100vh;
         background: var(--color-cream);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: right 0.3s ease;
         z-index: 1000;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .nav-links.active {
-        right: 0;
+        display: flex;
+        opacity: 1;
     }
 
     .nav-links li {
@@ -627,7 +774,6 @@ footer {
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.3s ease;
-        transition-delay: calc(var(--i) * 0.1s);
     }
 
     .nav-links.active li {
@@ -649,72 +795,79 @@ footer {
     }
 }
 
-/* Smooth Scroll Behavior */
-html {
-    scroll-behavior: smooth;
+/* Gallery image optimization */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
-/* Section Transitions */
-section {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.section-hidden {
+/* Fade In Animation */
+.fade-in {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
 }
 
-.section-visible {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.section-entering {
-    animation: sectionEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Add delay variations for staggered animations */
+.fade-in-delay-0 {
+    transition-delay: 0s;
 }
 
-/* Element Animations */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.fade-in-delay-1 {
+    transition-delay: 0.2s;
 }
 
-.element-visible {
-    opacity: 1;
-    transform: translateY(0);
+.fade-in-delay-2 {
+    transition-delay: 0.4s;
 }
 
-/* Animation Keyframes */
-@keyframes sectionEnter {
-    0% {
-        opacity: 0.8;
-        transform: scale(0.98);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
+/* Adjust spacing for very large screens */
+@media (min-width: 2560px) {
+    #hero {
+        min-height: 70vh; /* Even smaller height for 4K screens */
+        padding-bottom: 60px;
     }
 }
 
-/* Skill category animations */
-.skill-category {
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* Update work card image handling for narrow screens */
+@media (max-width: 380px) {
+    .work-image {
+        height: 250px; /* Reduced height */
+        padding: 1rem; /* Add padding to prevent edge touching */
+    }
 
-/* Form group animations */
-.form-group {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+    .work-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Change to contain to prevent cropping */
+        border-radius: var(--border-radius);
+    }
 
-/* Ensure animations don't play on page load for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .work-card {
+        background: rgba(73, 77, 0, 0.03); /* Lighter background */
+    }
+
+    .work-content {
+        padding: 1rem 1.25rem; /* Reduced padding */
+    }
+
+    .work-card h3 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .work-card p {
+        font-size: 1rem; /* Smaller font size */
     }
 } 

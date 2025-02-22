@@ -101,10 +101,9 @@
     background-color: var(--color-lime);
 }
 
-.step p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: rgba(73, 77, 0, 0.9);
+.step p:last-child {
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -150,22 +149,55 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .case-study-hero {
+        padding: 100px 0 60px;
+    }
+
     .case-study-hero h1 {
-        font-size: 4rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        word-break: break-word;
+        hyphens: auto;
     }
     
     .case-study-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
     }
     
-    .case-study-meta,
-    .process-steps {
+    .case-study-meta {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     
     .content-block h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .case-study-hero .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .case-study-hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .case-study-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Additional breakpoint for medium-sized screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .case-study-hero h1 {
+        font-size: 4rem;
+        line-height: 1.1;
     }
 }
 
@@ -213,7 +245,6 @@
     -webkit-backface-visibility: hidden;
     transition: transform 0.3s ease;
     will-change: transform;
-    loading: "lazy";
 }
 
 .image-caption {
@@ -275,4 +306,226 @@
     .image-caption h4 {
         font-size: 1.25rem;
     }
+}
+
+/* Stack specific colors */
+.case-study-page[data-project="stack"] {
+    background-color: #E0FAFF;
+    color: #00254D;
+}
+
+/* Stack navigation colors */
+.case-study-page[data-project="stack"] nav {
+    background-color: #E0FAFF;
+    border-bottom: 1px solid rgba(0, 37, 77, 0.15);
+}
+
+.case-study-page[data-project="stack"] nav .logo,
+.case-study-page[data-project="stack"] nav a {
+    color: #00254D;
+}
+
+.case-study-page[data-project="stack"] .case-study-hero {
+    background-color: #99CAFC;
+    color: #00254D;
+}
+
+.case-study-page[data-project="stack"] .case-study-subtitle,
+.case-study-page[data-project="stack"] .meta-item p {
+    color: rgba(0, 37, 77, 0.9);
+}
+
+.case-study-page[data-project="stack"] .meta-item h3 {
+    color: #00254D;
+}
+
+.case-study-page[data-project="stack"] .content-block h2 {
+    color: #00254D;
+}
+
+.case-study-page[data-project="stack"] .content-block p {
+    color: rgba(0, 37, 77, 0.9);
+}
+
+.case-study-page[data-project="stack"] .step {
+    background: rgba(153, 202, 252, 0.1);
+    border: 1px solid rgba(153, 202, 252, 0.2);
+}
+
+.case-study-page[data-project="stack"] .step h3 {
+    color: #00254D;
+}
+
+.case-study-page[data-project="stack"] .step h3::after {
+    background-color: #99CAFC;
+}
+
+.case-study-page[data-project="stack"] .step p {
+    color: rgba(0, 37, 77, 0.9);
+}
+
+.case-study-page[data-project="stack"] .gallery-section h2 {
+    color: #00254D;
+}
+
+/* Healthcare navigation colors */
+.case-study-page[data-project="healthcare"] nav {
+    background-color: #FFE0E0;
+    border-bottom: 1px solid rgba(77, 0, 0, 0.15);
+}
+
+.case-study-page[data-project="healthcare"] nav .logo,
+.case-study-page[data-project="healthcare"] nav a {
+    color: #4D0000;
+}
+
+/* Healthcare specific colors */
+.case-study-page[data-project="healthcare"] {
+    background-color: #FFE0E0;
+    color: #4D0000;
+}
+
+.case-study-page[data-project="healthcare"] .case-study-hero {
+    background-color: #F45D5D;
+    color: #4D0000;
+}
+
+.case-study-page[data-project="healthcare"] .case-study-subtitle,
+.case-study-page[data-project="healthcare"] .meta-item p {
+    color: rgba(77, 0, 0, 0.9);
+}
+
+.case-study-page[data-project="healthcare"] .meta-item h3 {
+    color: #4D0000;
+}
+
+.case-study-page[data-project="healthcare"] .content-block h2 {
+    color: #4D0000;
+}
+
+.case-study-page[data-project="healthcare"] .content-block p {
+    color: rgba(77, 0, 0, 0.9);
+}
+
+.case-study-page[data-project="healthcare"] .step {
+    background: rgba(244, 93, 93, 0.1);
+    border: 1px solid rgba(244, 93, 93, 0.2);
+}
+
+.case-study-page[data-project="healthcare"] .step h3 {
+    color: #4D0000;
+}
+
+.case-study-page[data-project="healthcare"] .step h3::after {
+    background-color: #F45D5D;
+}
+
+.case-study-page[data-project="healthcare"] .step p {
+    color: rgba(77, 0, 0, 0.9);
+}
+
+.case-study-page[data-project="healthcare"] .gallery-section h2 {
+    color: #4D0000;
+}
+
+/* Update Stack gallery styles */
+.case-study-page[data-project="stack"] .gallery-item {
+    background: #99CAFC;
+}
+
+.case-study-page[data-project="stack"] .image-caption {
+    background: linear-gradient(
+        to top,
+        rgba(0, 37, 77, 0.9),
+        rgba(0, 37, 77, 0)
+    );
+}
+
+.case-study-page[data-project="stack"] .image-caption h4,
+.case-study-page[data-project="stack"] .image-caption p {
+    color: #E0FAFF;
+}
+
+.case-study-page[data-project="stack"] .gallery-item:hover {
+    box-shadow: 0 10px 30px rgba(153, 202, 252, 0.3);
+}
+
+/* Update Healthcare gallery styles */
+.case-study-page[data-project="healthcare"] .gallery-item {
+    background: #F45D5D;
+}
+
+.case-study-page[data-project="healthcare"] .image-caption {
+    background: linear-gradient(
+        to top,
+        rgba(77, 0, 0, 0.9),
+        rgba(77, 0, 0, 0)
+    );
+}
+
+.case-study-page[data-project="healthcare"] .image-caption h4,
+.case-study-page[data-project="healthcare"] .image-caption p {
+    color: #FFE0E0;
+}
+
+.case-study-page[data-project="healthcare"] .gallery-item:hover {
+    box-shadow: 0 10px 30px rgba(244, 93, 93, 0.3);
+}
+
+/* Update case study navigation */
+.case-study-page nav .container {
+    justify-content: flex-start; /* Align to the left */
+}
+
+.case-study-page .logo {
+    display: none; /* Hide the logo */
+}
+
+.case-study-page .nav-links {
+    margin-left: 0; /* Remove any left margin */
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+    .case-study-page nav .container {
+        justify-content: flex-start;
+    }
+}
+
+.research-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.research-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: rgba(73, 77, 0, 0.9);
+    font-size: 1.125rem;
+}
+
+.research-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-lime);
+}
+
+/* Stack specific colors */
+.case-study-page[data-project="stack"] .research-list li {
+    color: rgba(0, 37, 77, 0.9);
+}
+
+.case-study-page[data-project="stack"] .research-list li::before {
+    color: #99CAFC;
+}
+
+/* Healthcare specific colors */
+.case-study-page[data-project="healthcare"] .research-list li {
+    color: rgba(77, 0, 0, 0.9);
+}
+
+.case-study-page[data-project="healthcare"] .research-list li::before {
+    color: #F45D5D;
 } 
